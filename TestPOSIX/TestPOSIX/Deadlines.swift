@@ -15,7 +15,6 @@ class Deadlines: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let send = myTableView.cellForRow(at: indexPath)
-        print("Performed Segue")
         performSegue(withIdentifier: "editDeadline", sender: send)
     }
     

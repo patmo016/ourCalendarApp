@@ -12,14 +12,14 @@ class TasksViewController: UIViewController, UITableViewDataSource {
     var tasks: [String] = []
     
     @IBOutlet weak var listTableView: UITableView!
-    @IBAction func addTask(_ sender: Any) {
+    @IBAction func addTask(_ sender: Any)
+    {
         alert()
     }
     /* shows tasks in Tasks UI. */
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "taskItem")
         cell.textLabel?.text = (assignmentArryy[indexPath.row] as! AssignmentObjc).lecture;
-        
         return cell
     }
     /* get the number of items in tasks array */
@@ -33,27 +33,19 @@ class TasksViewController: UIViewController, UITableViewDataSource {
             textfield.placeholder = "Add Your Task..."
             textfield.keyboardType = UIKeyboardType.default
         }
-        
         let add = UIAlertAction(title: "Add", style: .default) {
-            
             (action) in
             let textfield = alert.textFields![0]
             let ass: AssignmentObjc = AssignmentObjc.init(pkid: -1, lecture: textfield.text!, time: "", position: "");
-
             self.tasks.append(textfield.text!)
             Bridging.insertNewNewNewAssignmentObjc(ass);
-            self.listTableView.reloadData()
-            
-            
+            self.viewWillAppear(true)
         }
         let cancel = UIAlertAction(title: "Cancel", style: .cancel) {
             (alert) in
-            print("Hi")
-            
         }
         alert.addAction(add)
         alert.addAction(cancel)
-        
         present(alert,animated: true, completion: nil)
     }
     
@@ -69,10 +61,8 @@ class TasksViewController: UIViewController, UITableViewDataSource {
     /* check if the view will appear or not */
     override func viewWillAppear(_ animated: Bool) {
         assignmentArryy = NSMutableArray(array:Bridging.queryForAllNewNewAssignments());
-
         self.navigationItem.title = "Tasks"
         listTableView.reloadData()
-        
     }
     /* add delete function to tasks UI */
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
@@ -86,11 +76,4 @@ class TasksViewController: UIViewController, UITableViewDataSource {
         listTableView.reloadData()
 
     }
-
-    /* check if it received memory warning */
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 }

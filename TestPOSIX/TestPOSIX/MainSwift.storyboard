@@ -98,7 +98,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2812" y="-2.2488755622188905"/>
+            <point key="canvasLocation" x="2446" y="0.0"/>
         </scene>
         <!--Add Deadlines-->
         <scene sceneID="aUU-sh-3ct">
@@ -120,14 +120,6 @@
                                 <color key="textColor" white="0.96999999999999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mb6-pe-UGw">
-                                <rect key="frame" x="0.0" y="64" width="70" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="&lt;Back">
-                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Deadline name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yXM-9k-8S6">
                                 <rect key="frame" x="61" y="222" width="114" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -179,7 +171,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PGS-Qk-jDA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3644" y="-0.44977511244377816"/>
+            <point key="canvasLocation" x="3215" y="0.0"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -195,11 +187,12 @@
                     </tabBar>
                     <connections>
                         <segue destination="8mk-L0-GtZ" kind="relationship" relationship="viewControllers" id="Vh5-vy-jiO"/>
+                        <segue destination="6Nh-wM-YFW" kind="relationship" relationship="viewControllers" id="25w-Q3-QNw"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="0.0"/>
+            <point key="canvasLocation" x="849" y="0.0"/>
         </scene>
         <!--Tasks-->
         <scene sceneID="PEd-dd-Ftr">
@@ -214,7 +207,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wdm-R7-iad">
-                                <rect key="frame" x="0.0" y="46" width="375" height="533"/>
+                                <rect key="frame" x="0.0" y="46" width="375" height="484"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="taskItem" rowHeight="60" id="HMm-Uw-5G2">
@@ -228,7 +221,7 @@
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Task" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DFW-Fa-ft2">
-                                <rect key="frame" x="16" y="585" width="275" height="58"/>
+                                <rect key="frame" x="16" y="536" width="275" height="58"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -244,7 +237,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eeT-78-Jxu">
-                                <rect key="frame" x="299" y="592" width="47" height="44"/>
+                                <rect key="frame" x="299" y="543" width="47" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="47" id="WNg-49-Z9T"/>
                                     <constraint firstAttribute="height" constant="44" id="YtY-84-I21"/>
@@ -279,7 +272,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9i7-Z8-VRu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="936.79999999999995" y="1164.4677661169417"/>
+            <point key="canvasLocation" x="2446" y="1274"/>
         </scene>
         <!--Tasks-->
         <scene sceneID="OU8-YM-Tju">
@@ -298,7 +291,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A9t-jv-qEk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2.3999999999999999" y="1164.4677661169417"/>
+            <point key="canvasLocation" x="1654" y="1273"/>
         </scene>
         <!--Time Table Pop Up View Controller-->
         <scene sceneID="Dbv-g3-CHB">
@@ -921,7 +914,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vuK-Mx-NPa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1872.8" y="-2.2488755622188905"/>
+            <point key="canvasLocation" x="1654" y="0.0"/>
         </scene>
     </scenes>
     <resources>
