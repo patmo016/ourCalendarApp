@@ -7,7 +7,9 @@
 import UIKit
 
 var assignmentArryy : NSMutableArray = [];
-class TasksViewController: UIViewController, UITableViewDataSource {
+
+
+class Tasks: UIViewController, UITableViewDataSource {
     
     var tasks: [String] = []
     
