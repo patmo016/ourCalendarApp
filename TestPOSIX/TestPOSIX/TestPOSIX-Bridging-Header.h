@@ -11,26 +11,29 @@
 
 + (NSArray *)queryForAllAssignments;
 
-+ (NSArray *)queryForAllNewAssignments;
++ (NSArray *)queryForAllMeetings;
 
-+ (NSArray *)queryForAllNewNewAssignments;
++ (NSArray *)queryForAllTasks;
+
++ (NSArray *)queryForAllCalendar;
 
 
 + (void)insertNewAssignmentObjc:(AssignmentObjc *)assobjc;
 
-+ (void)insertNewNewAssignmentObjc:(AssignmentObjc *)assobjc;
++ (void)insertMeetingsObjc:(AssignmentObjc *)assobjc;
 
-+ (void)insertNewNewNewAssignmentObjc:(AssignmentObjc *)assobjc;
++ (void)insertTasksObjc:(AssignmentObjc *)assobjc;
+
++ (void)insertCalendarObjc:(CalendarObjc *)calobjc;
 
 + (BOOL)deleteAssignmentById:(NSNumber *)pkid;
 
-+ (BOOL)deleteNewAssignmentById:(NSNumber *)pkid;
++ (BOOL)deleteMeetingsById:(NSNumber *)pkid;
 
-+ (BOOL)deleteNewNewAssignmentById:(NSNumber *)pkid;
++ (BOOL)deleteTasksById:(NSNumber *)pkid;
 
 
 
-+ (void)insertNewCalendarObjc:(CalendarObjc *)calobjc;
 
 + (BOOL)deleteCalendarById:(NSNumber *)pkid;
 

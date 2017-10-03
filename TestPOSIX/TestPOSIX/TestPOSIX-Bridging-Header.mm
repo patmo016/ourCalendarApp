@@ -8,6 +8,7 @@
 #import <Foundation/Foundation.h>
 #import "TestPOSIX-Bridging-Header.hpp"
 #import "AssignmentObjc.h"
+#import "CalendarObjc.h"
 #import "sqlite_operations.hpp"
 
 #import "vector"
@@ -31,20 +32,40 @@ using namespace std;
     return [NSArray arrayWithObjects:&outVec[0] count:outVec.size()];
 }
 
++ (NSArray *)convertToCalendarObjcArrayWithCalendarCppVector:(vector<CalendarCpp>)vcalcpp {
+    vector<CalendarObjc *> outcalVec;
+    outcalVec.resize(vcalcpp.size());
+    transform(vcalcpp.begin(), vcalcpp.end(), outcalVec.begin(), [](CalendarCpp calcpp){
+        return [CalendarObjc calendarObjcWithCalendarCpp:calcpp];
+    });
+    return [NSArray arrayWithObjects:&outcalVec[0] count:outcalVec.size()];
+}
+
+
+
+
 + (NSArray *)queryForAllAssignments {
     auto assVec = queryForAllAssignments();
     return [Bridging convertToAssignmentObjcArrayWithAssignmentCppVector:assVec];
 }
 
-+ (NSArray *)queryForAllNewAssignments {
-    auto assVec = queryForAllNewAssignments();
++ (NSArray *)queryForAllMeetings {
+    auto assVec = queryForAllMeetings();
     return [Bridging convertToAssignmentObjcArrayWithAssignmentCppVector:assVec];
 }
 
-+ (NSArray *)queryForAllNewNewAssignments {
-    auto assVec = queryForAllNewNewAssignments();
++ (NSArray *)queryForAllTasks {
+    auto assVec = queryForAllTasks();
     return [Bridging convertToAssignmentObjcArrayWithAssignmentCppVector:assVec];
 }
+
++ (NSArray *)queryForAllCalendars {
+    auto calVec = queryForAllCalendar();
+    return [Bridging convertToCalendarObjcArrayWithCalendarCppVector:calVec];
+}
+
+
+
 
 
 
@@ -52,38 +73,49 @@ using namespace std;
     insertNewAssignmentCpp(asscpp);
 }
 
-+ (void)insertNewNewAssignmentCpp:(AssignmentCpp)asscpp {
-    insertNewNewAssignmentCpp(asscpp);
++ (void)insertMeetingsCpp:(AssignmentCpp)asscpp {
+    insertMeetingsCpp(asscpp);
 }
 
-+ (void)insertNewNewNewAssignmentCpp:(AssignmentCpp)asscpp {
-    insertNewNewNewAssignmentCpp(asscpp);
++ (void)insertTasksCpp:(AssignmentCpp)asscpp {
+    insertTasksCpp(asscpp);
+}
+
++ (void)insertCalendarCpp:(CalendarCpp)calcpp {
+    insertCalendarCpp(calcpp);
 }
 
 + (void)insertNewAssignmentObjc:(AssignmentObjc *)assobjc {
     [Bridging insertNewAssignmentCpp:assignmentCppFromAssignmentObjc(assobjc)];
 }
 
-+ (void)insertNewNewAssignmentObjc:(AssignmentObjc *)assobjc {
-    [Bridging insertNewNewAssignmentCpp:assignmentCppFromAssignmentObjc(assobjc)];
++ (void)insertMeetingsObjc:(AssignmentObjc *)assobjc {
+    [Bridging insertMeetingsCpp:assignmentCppFromAssignmentObjc(assobjc)];
 }
 
-+ (void)insertNewNewNewAssignmentObjc:(AssignmentObjc *)assobjc {
-    [Bridging insertNewNewNewAssignmentCpp:assignmentCppFromAssignmentObjc(assobjc)];
++ (void)insertTasksObjc:(AssignmentObjc *)assobjc {
+    [Bridging insertTasksCpp:assignmentCppFromAssignmentObjc(assobjc)];
+}
+
++ (void)insertCalendarObjc:(CalendarObjc *)calobjc {
+    [Bridging insertCalendarCpp:calendarCppFromCalendarObjc(calobjc)];
 }
 
 + (BOOL)deleteAssignmentById:(NSNumber *)pkid {
     return deleteAssignmentById([pkid intValue]);
 }
 
-+ (BOOL)deleteNewAssignmentById:(NSNumber *)pkid {
-    return deleteNewAssignmentById([pkid intValue]);
++ (BOOL)deleteMeetingsById:(NSNumber *)pkid {
+    return deleteMeetingsById([pkid intValue]);
 }
 
-+ (BOOL)deleteNewNewAssignmentById:(NSNumber *)pkid {
-    return deleteNewNewAssignmentById([pkid intValue]);
++ (BOOL)deleteTasksById:(NSNumber *)pkid {
+    return deleteTasksById([pkid intValue]);
 }
 
++ (BOOL)deleteCalendarById:(NSNumber *)pkid {
+    return deleteCalendarById([pkid intValue]);
+}
 
 
 

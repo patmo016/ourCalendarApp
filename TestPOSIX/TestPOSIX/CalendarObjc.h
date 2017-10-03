@@ -1,18 +1,14 @@
-//
-//  CalendarObjc.h
-//  TestPOSIX
-//
-//  Created by Xinru Chen on Friday, 26 May, 2017 AD.
-//  Copyright © 2017 Xinru Chen. All rights reserved.
-//
-
-#ifndef CalendarObjc_hm_h
-#define CalendarObjc_hm_h
-
+/**
+ Cosc345 Asn 2, CalendarObjc.h
+ Purpose: part of code that solve the IOS sandbox environment problem.
+ @author Xinru Chen, Luke Falvey, Molly Patterson
+ @version 1.0 5/29/17
+ */
 
 #import <Foundation/Foundation.h>
-@interface CalendarObjc : NSObject
+#import "sqlite_operations.hpp"
 
+@interface CalendarObjc : NSObject
 
 @property (readonly) NSNumber *pkid;
 @property (readonly) NSString *classes;
@@ -22,12 +18,18 @@
 @property (readonly) NSString *fortnightly;
 @property (readonly) NSString *location;
 
+
 - (instancetype)initWithPkid:(NSNumber *)pkid classes:(NSString *)classes starttime:(NSString *)starttime days:(NSString *)days weekly:(NSString *)weekly fortnightly:(NSString *)fortnightly location:(NSString *)location;
 
+- (instancetype)initWithCalendarCpp:(CalendarCpp)calCpp;
+
 + (instancetype)calendarObjcWithPkid:(NSNumber *)pkid classes:(NSString *)classes starttime:(NSString *)starttime days:(NSString *)days weekly:(NSString *)weekly fortnightly:(NSString *)fortnightly location:(NSString *)location;
+
++ (instancetype)calendarObjcWithCalendarCpp:(CalendarCpp)calCpp;
+
+- (CalendarCpp)toCalendarCpp;
+
 @end
 
-#endif /* CalendarObjc_hm_h */
-
-
+CalendarCpp calendarCppFromCalendarObjc(CalendarObjc *calobjc);
 

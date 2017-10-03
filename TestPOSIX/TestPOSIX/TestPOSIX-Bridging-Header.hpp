@@ -9,29 +9,36 @@
 #define TestPOSIX_Bridging_Header_h
 
 #import "AssignmentObjc.h"
+#import "CalendarObjc.h"
 #import "vector"
 
 AssignmentCpp assignmentCppFromAssignmentObjc(AssignmentObjc *assobjc);
+CalendarCpp calendarCppFromCalendarObjc(CalendarObjc *calobjc);
 
 @interface Bridging : NSObject
 
 + (NSArray *)convertToAssignmentObjcArrayWithAssignmentCppVector:(std::vector<AssignmentCpp>)vasscpp;
 
++ (NSArray *)convertToCalendarObjcArrayWithCalendarCppVector:(std::vector<CalendarCpp>)vcalcpp;
+
 + (NSArray *)queryForAllAssignments;
 
-+ (NSArray *)queryForAllNewAssignments;
++ (NSArray *)queryForAllMeetings;
 
-+ (NSArray *)queryForAllNewNewAssignments;
++ (NSArray *)queryForAllTasks;
+
++ (NSArray *)queryForAllCalendar;
 
 + (void)insertNewAssignmentCpp:(AssignmentCpp)asscpp;
 
-+ (void)insertNewAssignmentObjc:(AssignmentObjc *)assobjc;
++ (void)insertMeetingsObjc:(AssignmentObjc *)assobjc;
 
-+ (void)insertNewNewAssignmentObjc:(AssignmentObjc *)assobjc;
++ (void)insertTasksObjc:(AssignmentObjc *)assobjc;
+
++ (void)insertCalendarObjc:(CalendarObjc *)calobjc;
 
 + (BOOL)deleteAssignmentById:(NSNumber *)pkid;
 
-+ (NSArray *)convertToCalendarObjcArrayWithCalendarCppVector:(std::vector<CalendarCpp>)vcalcpp;
 
 + (NSArray *)queryForAllCalendars;
 

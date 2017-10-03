@@ -12,10 +12,6 @@
 		0349AF561ED16CE200CF3FC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0349AF551ED16CE200CF3FC7 /* Assets.xcassets */; };
 		0349AF591ED16CE200CF3FC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0349AF571ED16CE200CF3FC7 /* LaunchScreen.storyboard */; };
 		0349AF641ED1898D00CF3FC7 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0349AF631ED1898D00CF3FC7 /* AppDelegate.mm */; };
-		03A25C591ED2BE0300B9332B /* sqlite_operations.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 03A25C571ED2BE0300B9332B /* sqlite_operations.cpp */; };
-		03A25C5C1ED3133F00B9332B /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A25C5B1ED3133F00B9332B /* TableViewController.m */; };
-		03A25C611ED45ED900B9332B /* AssignmentsViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 03A25C601ED45ED900B9332B /* AssignmentsViewController.mm */; };
-		03A25C641ED45F3D00B9332B /* AssignmentObjc.mm in Sources */ = {isa = PBXBuildFile; fileRef = 03A25C631ED45F3D00B9332B /* AssignmentObjc.mm */; };
 		03C788231ED6B51D00C643A9 /* AddDeadlines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C788191ED6B51D00C643A9 /* AddDeadlines.swift */; };
 		03C788251ED6B51D00C643A9 /* DeadlinesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C7881B1ED6B51D00C643A9 /* DeadlinesCell.swift */; };
 		03C788261ED6B51D00C643A9 /* Deadlines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C7881C1ED6B51D00C643A9 /* Deadlines.swift */; };
@@ -26,15 +22,22 @@
 		03C788341ED6B7C400C643A9 /* deadlines_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C788301ED6B7C400C643A9 /* deadlines_image.png */; };
 		03C788351ED6B7C400C643A9 /* meeting_Image.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C788311ED6B7C400C643A9 /* meeting_Image.png */; };
 		03C788361ED6B7C400C643A9 /* task_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C788321ED6B7C400C643A9 /* task_image.png */; };
-		03C788381ED6B94800C643A9 /* TestPOSIX-Bridging-Header.mm in Sources */ = {isa = PBXBuildFile; fileRef = 03C788371ED6B94800C643A9 /* TestPOSIX-Bridging-Header.mm */; };
 		03CE8BD21EDA6AF60004A336 /* addButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 03CE8BCF1EDA6AF60004A336 /* addButton.png */; };
 		03CE8BD31EDA6AF60004A336 /* checkbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 03CE8BD01EDA6AF60004A336 /* checkbox.png */; };
 		03CE8BD41EDA6AF60004A336 /* uncheckedBox.png in Resources */ = {isa = PBXBuildFile; fileRef = 03CE8BD11EDA6AF60004A336 /* uncheckedBox.png */; };
 		03CE8BD71EDA6B6A0004A336 /* MeetingPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CE8BD51EDA6B6A0004A336 /* MeetingPopUpViewController.swift */; };
 		03CE8BD81EDA6B6A0004A336 /* MeetingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CE8BD61EDA6B6A0004A336 /* MeetingsTableViewCell.swift */; };
-		03D5B7801ED494D50024740C /* AssignmentCell.mm in Sources */ = {isa = PBXBuildFile; fileRef = 03D5B77F1ED494D50024740C /* AssignmentCell.mm */; };
 		247897F41F3FD91400EC6C4C /* addMeeting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247897F31F3FD91400EC6C4C /* addMeeting.swift */; };
 		6429A2AE2D4859363B840DEC /* libPods-TestPOSIX.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 388500103F1737A9058A9A4F /* libPods-TestPOSIX.a */; };
+		C709CE911F8312FA003BDD4A /* AssignmentCell.mm in Sources */ = {isa = PBXBuildFile; fileRef = C709CE811F8312FA003BDD4A /* AssignmentCell.mm */; };
+		C709CE921F8312FA003BDD4A /* AssignmentObjc.hm in Resources */ = {isa = PBXBuildFile; fileRef = C709CE831F8312FA003BDD4A /* AssignmentObjc.hm */; };
+		C709CE931F8312FA003BDD4A /* AssignmentObjc.mm in Sources */ = {isa = PBXBuildFile; fileRef = C709CE841F8312FA003BDD4A /* AssignmentObjc.mm */; };
+		C709CE941F8312FA003BDD4A /* AssignmentsViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = C709CE861F8312FA003BDD4A /* AssignmentsViewController.mm */; };
+		C709CE951F8312FA003BDD4A /* CalendarObjc.hm in Resources */ = {isa = PBXBuildFile; fileRef = C709CE881F8312FA003BDD4A /* CalendarObjc.hm */; };
+		C709CE961F8312FA003BDD4A /* CalendarObjc.mm in Sources */ = {isa = PBXBuildFile; fileRef = C709CE891F8312FA003BDD4A /* CalendarObjc.mm */; };
+		C709CE971F8312FA003BDD4A /* sqlite_operations.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C709CE8A1F8312FA003BDD4A /* sqlite_operations.cpp */; };
+		C709CE981F8312FA003BDD4A /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C709CE8D1F8312FA003BDD4A /* TableViewController.m */; };
+		C709CE991F8312FA003BDD4A /* TestPOSIX-Bridging-Header.mm in Sources */ = {isa = PBXBuildFile; fileRef = C709CE901F8312FA003BDD4A /* TestPOSIX-Bridging-Header.mm */; };
 		FDBFAF5D1ED8890400C33278 /* CalendarObjc.hm in Resources */ = {isa = PBXBuildFile; fileRef = FDBFAF5C1ED8890400C33278 /* CalendarObjc.hm */; };
 /* End PBXBuildFile section */
 
@@ -48,15 +51,6 @@
 		0349AF581ED16CE200CF3FC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0349AF5A1ED16CE200CF3FC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0349AF631ED1898D00CF3FC7 /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
-		03A25C571ED2BE0300B9332B /* sqlite_operations.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sqlite_operations.cpp; sourceTree = "<group>"; };
-		03A25C581ED2BE0300B9332B /* sqlite_operations.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = sqlite_operations.hpp; sourceTree = "<group>"; };
-		03A25C5A1ED3133F00B9332B /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
-		03A25C5B1ED3133F00B9332B /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
-		03A25C5F1ED45ED900B9332B /* AssignmentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssignmentsViewController.h; sourceTree = "<group>"; };
-		03A25C601ED45ED900B9332B /* AssignmentsViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AssignmentsViewController.mm; sourceTree = "<group>"; };
-		03A25C621ED45F3D00B9332B /* AssignmentObjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssignmentObjc.h; sourceTree = "<group>"; };
-		03A25C631ED45F3D00B9332B /* AssignmentObjc.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AssignmentObjc.mm; sourceTree = "<group>"; };
-		03C788181ED6B51C00C643A9 /* TestPOSIX-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestPOSIX-Bridging-Header.h"; sourceTree = "<group>"; };
 		03C788191ED6B51D00C643A9 /* AddDeadlines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDeadlines.swift; sourceTree = "<group>"; };
 		03C7881B1ED6B51D00C643A9 /* DeadlinesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeadlinesCell.swift; sourceTree = "<group>"; };
 		03C7881C1ED6B51D00C643A9 /* Deadlines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deadlines.swift; sourceTree = "<group>"; };
@@ -67,20 +61,32 @@
 		03C788301ED6B7C400C643A9 /* deadlines_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = deadlines_image.png; sourceTree = "<group>"; };
 		03C788311ED6B7C400C643A9 /* meeting_Image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = meeting_Image.png; sourceTree = "<group>"; };
 		03C788321ED6B7C400C643A9 /* task_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = task_image.png; sourceTree = "<group>"; };
-		03C788371ED6B94800C643A9 /* TestPOSIX-Bridging-Header.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "TestPOSIX-Bridging-Header.mm"; sourceTree = "<group>"; };
-		03C788391ED6BCA500C643A9 /* TestPOSIX-Bridging-Header.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "TestPOSIX-Bridging-Header.hpp"; sourceTree = "<group>"; };
-		03C7883A1ED6BE5E00C643A9 /* AssignmentObjc.hm */ = {isa = PBXFileReference; lastKnownFileType = text; path = AssignmentObjc.hm; sourceTree = "<group>"; };
 		03CE8BCF1EDA6AF60004A336 /* addButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addButton.png; sourceTree = "<group>"; };
 		03CE8BD01EDA6AF60004A336 /* checkbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkbox.png; sourceTree = "<group>"; };
 		03CE8BD11EDA6AF60004A336 /* uncheckedBox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = uncheckedBox.png; sourceTree = "<group>"; };
 		03CE8BD51EDA6B6A0004A336 /* MeetingPopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingPopUpViewController.swift; sourceTree = "<group>"; };
 		03CE8BD61EDA6B6A0004A336 /* MeetingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingsTableViewCell.swift; sourceTree = "<group>"; };
-		03D5B77E1ED494D50024740C /* AssignmentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssignmentCell.h; sourceTree = "<group>"; };
-		03D5B77F1ED494D50024740C /* AssignmentCell.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AssignmentCell.mm; sourceTree = "<group>"; };
 		247897F31F3FD91400EC6C4C /* addMeeting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addMeeting.swift; sourceTree = "<group>"; };
 		388500103F1737A9058A9A4F /* libPods-TestPOSIX.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TestPOSIX.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F73A8DF3069A7F8C13FAA40 /* Pods-TestPOSIX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestPOSIX.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestPOSIX/Pods-TestPOSIX.release.xcconfig"; sourceTree = "<group>"; };
 		C1A5B0ACD6CDFED638BDCD17 /* Pods-TestPOSIX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestPOSIX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestPOSIX/Pods-TestPOSIX.debug.xcconfig"; sourceTree = "<group>"; };
+		C709CE801F8312FA003BDD4A /* AssignmentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssignmentCell.h; sourceTree = "<group>"; };
+		C709CE811F8312FA003BDD4A /* AssignmentCell.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AssignmentCell.mm; sourceTree = "<group>"; };
+		C709CE821F8312FA003BDD4A /* AssignmentObjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssignmentObjc.h; sourceTree = "<group>"; };
+		C709CE831F8312FA003BDD4A /* AssignmentObjc.hm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AssignmentObjc.hm; sourceTree = "<group>"; };
+		C709CE841F8312FA003BDD4A /* AssignmentObjc.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AssignmentObjc.mm; sourceTree = "<group>"; };
+		C709CE851F8312FA003BDD4A /* AssignmentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssignmentsViewController.h; sourceTree = "<group>"; };
+		C709CE861F8312FA003BDD4A /* AssignmentsViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AssignmentsViewController.mm; sourceTree = "<group>"; };
+		C709CE871F8312FA003BDD4A /* CalendarObjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarObjc.h; sourceTree = "<group>"; };
+		C709CE881F8312FA003BDD4A /* CalendarObjc.hm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CalendarObjc.hm; sourceTree = "<group>"; };
+		C709CE891F8312FA003BDD4A /* CalendarObjc.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CalendarObjc.mm; sourceTree = "<group>"; };
+		C709CE8A1F8312FA003BDD4A /* sqlite_operations.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sqlite_operations.cpp; sourceTree = "<group>"; };
+		C709CE8B1F8312FA003BDD4A /* sqlite_operations.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = sqlite_operations.hpp; sourceTree = "<group>"; };
+		C709CE8C1F8312FA003BDD4A /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		C709CE8D1F8312FA003BDD4A /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		C709CE8E1F8312FA003BDD4A /* TestPOSIX-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestPOSIX-Bridging-Header.h"; sourceTree = "<group>"; };
+		C709CE8F1F8312FA003BDD4A /* TestPOSIX-Bridging-Header.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = "TestPOSIX-Bridging-Header.hpp"; sourceTree = "<group>"; };
+		C709CE901F8312FA003BDD4A /* TestPOSIX-Bridging-Header.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "TestPOSIX-Bridging-Header.mm"; sourceTree = "<group>"; };
 		FDBFAF5C1ED8890400C33278 /* CalendarObjc.hm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CalendarObjc.hm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -158,20 +164,23 @@
 		2406942F1F3E70D300070105 /* Database Files */ = {
 			isa = PBXGroup;
 			children = (
-				03A25C571ED2BE0300B9332B /* sqlite_operations.cpp */,
-				03A25C581ED2BE0300B9332B /* sqlite_operations.hpp */,
-				03A25C5A1ED3133F00B9332B /* TableViewController.h */,
-				03A25C5B1ED3133F00B9332B /* TableViewController.m */,
-				03A25C5F1ED45ED900B9332B /* AssignmentsViewController.h */,
-				03A25C601ED45ED900B9332B /* AssignmentsViewController.mm */,
-				03A25C621ED45F3D00B9332B /* AssignmentObjc.h */,
-				03A25C631ED45F3D00B9332B /* AssignmentObjc.mm */,
-				03D5B77E1ED494D50024740C /* AssignmentCell.h */,
-				03D5B77F1ED494D50024740C /* AssignmentCell.mm */,
-				03C788181ED6B51C00C643A9 /* TestPOSIX-Bridging-Header.h */,
-				03C788371ED6B94800C643A9 /* TestPOSIX-Bridging-Header.mm */,
-				03C788391ED6BCA500C643A9 /* TestPOSIX-Bridging-Header.hpp */,
-				03C7883A1ED6BE5E00C643A9 /* AssignmentObjc.hm */,
+				C709CE801F8312FA003BDD4A /* AssignmentCell.h */,
+				C709CE811F8312FA003BDD4A /* AssignmentCell.mm */,
+				C709CE821F8312FA003BDD4A /* AssignmentObjc.h */,
+				C709CE831F8312FA003BDD4A /* AssignmentObjc.hm */,
+				C709CE841F8312FA003BDD4A /* AssignmentObjc.mm */,
+				C709CE851F8312FA003BDD4A /* AssignmentsViewController.h */,
+				C709CE861F8312FA003BDD4A /* AssignmentsViewController.mm */,
+				C709CE871F8312FA003BDD4A /* CalendarObjc.h */,
+				C709CE881F8312FA003BDD4A /* CalendarObjc.hm */,
+				C709CE891F8312FA003BDD4A /* CalendarObjc.mm */,
+				C709CE8A1F8312FA003BDD4A /* sqlite_operations.cpp */,
+				C709CE8B1F8312FA003BDD4A /* sqlite_operations.hpp */,
+				C709CE8C1F8312FA003BDD4A /* TableViewController.h */,
+				C709CE8D1F8312FA003BDD4A /* TableViewController.m */,
+				C709CE8E1F8312FA003BDD4A /* TestPOSIX-Bridging-Header.h */,
+				C709CE8F1F8312FA003BDD4A /* TestPOSIX-Bridging-Header.hpp */,
+				C709CE901F8312FA003BDD4A /* TestPOSIX-Bridging-Header.mm */,
 			);
 			name = "Database Files";
 			sourceTree = "<group>";
@@ -260,6 +269,7 @@
 				0349AF591ED16CE200CF3FC7 /* LaunchScreen.storyboard in Resources */,
 				03CE8BD41EDA6AF60004A336 /* uncheckedBox.png in Resources */,
 				03C7882E1ED6B54400C643A9 /* MainSwift.storyboard in Resources */,
+				C709CE951F8312FA003BDD4A /* CalendarObjc.hm in Resources */,
 				FDBFAF5D1ED8890400C33278 /* CalendarObjc.hm in Resources */,
 				03C788351ED6B7C400C643A9 /* meeting_Image.png in Resources */,
 				0349AF561ED16CE200CF3FC7 /* Assets.xcassets in Resources */,
@@ -267,6 +277,7 @@
 				03C788341ED6B7C400C643A9 /* deadlines_image.png in Resources */,
 				03C788331ED6B7C400C643A9 /* calendarImage.png in Resources */,
 				03C788361ED6B7C400C643A9 /* task_image.png in Resources */,
+				C709CE921F8312FA003BDD4A /* AssignmentObjc.hm in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,20 +338,21 @@
 			files = (
 				03C788251ED6B51D00C643A9 /* DeadlinesCell.swift in Sources */,
 				0349AF4B1ED16CE200CF3FC7 /* main.m in Sources */,
+				C709CE911F8312FA003BDD4A /* AssignmentCell.mm in Sources */,
+				C709CE961F8312FA003BDD4A /* CalendarObjc.mm in Sources */,
 				0349AF641ED1898D00CF3FC7 /* AppDelegate.mm in Sources */,
 				03CE8BD81EDA6B6A0004A336 /* MeetingsTableViewCell.swift in Sources */,
 				03C788261ED6B51D00C643A9 /* Deadlines.swift in Sources */,
-				03C788381ED6B94800C643A9 /* TestPOSIX-Bridging-Header.mm in Sources */,
-				03A25C5C1ED3133F00B9332B /* TableViewController.m in Sources */,
-				03D5B7801ED494D50024740C /* AssignmentCell.mm in Sources */,
+				C709CE981F8312FA003BDD4A /* TableViewController.m in Sources */,
 				03C788231ED6B51D00C643A9 /* AddDeadlines.swift in Sources */,
-				03A25C641ED45F3D00B9332B /* AssignmentObjc.mm in Sources */,
 				03C788281ED6B51D00C643A9 /* MeetingsViewController.swift in Sources */,
+				C709CE931F8312FA003BDD4A /* AssignmentObjc.mm in Sources */,
+				C709CE941F8312FA003BDD4A /* AssignmentsViewController.mm in Sources */,
 				03C7882B1ED6B51D00C643A9 /* Tasks.swift in Sources */,
-				03A25C591ED2BE0300B9332B /* sqlite_operations.cpp in Sources */,
 				247897F41F3FD91400EC6C4C /* addMeeting.swift in Sources */,
+				C709CE971F8312FA003BDD4A /* sqlite_operations.cpp in Sources */,
 				03CE8BD71EDA6B6A0004A336 /* MeetingPopUpViewController.swift in Sources */,
-				03A25C611ED45ED900B9332B /* AssignmentsViewController.mm in Sources */,
+				C709CE991F8312FA003BDD4A /* TestPOSIX-Bridging-Header.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
