@@ -71,14 +71,14 @@ class MeetingsViewController: UIViewController, UITableViewDelegate, UITableView
         if editingStyle == UITableViewCellEditingStyle.delete {
             let target: AssignmentObjc = assignmentArry[indexPath.row] as! AssignmentObjc;
             assignmentArry.remove(at: indexPath.row)
-            assignmentArry = NSMutableArray(array:Bridging.queryForAllNewAssignments());
-            Bridging.deleteNewAssignment(byId: target.pkid);
+            assignmentArry = NSMutableArray(array:Bridging.queryForAllMeetings());
+            Bridging.deleteMeetings(byId: target.pkid);
         }
         meetingsList.reloadData()
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        assignmentArry = NSMutableArray(array:Bridging.queryForAllNewAssignments());
+        assignmentArry = NSMutableArray(array:Bridging.queryForAllMeetings());
         meetingsList.reloadData()
     }
 }

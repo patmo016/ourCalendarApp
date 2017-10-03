@@ -31,7 +31,7 @@ class MeetingPopUpViewController: UIViewController {
             
             groupText.text = ""
             timeAndDate.text = ""
-            Bridging.insertNewNewAssignmentObjc(ass);
+            Bridging.insertMeetingsObjc(ass);
             
         }
         self.view.removeFromSuperview()

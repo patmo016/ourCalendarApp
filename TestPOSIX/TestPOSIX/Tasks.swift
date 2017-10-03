@@ -40,7 +40,7 @@ class Tasks: UIViewController, UITableViewDataSource {
             let textfield = alert.textFields![0]
             let ass: AssignmentObjc = AssignmentObjc.init(pkid: -1, lecture: textfield.text!, time: "", position: "");
             self.tasks.append(textfield.text!)
-            Bridging.insertNewNewNewAssignmentObjc(ass);
+            Bridging.insertTasksObjc(ass);
             self.viewWillAppear(true)
         }
         let cancel = UIAlertAction(title: "Cancel", style: .cancel) {
@@ -55,14 +55,14 @@ class Tasks: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         listTableView.dataSource = self
-        assignmentArryy = NSMutableArray(array:Bridging.queryForAllNewNewAssignments());
+        assignmentArryy = NSMutableArray(array:Bridging.queryForAllTasks());
         UITextField.appearance().tintColor = .black
         listTableView.reloadData()
 
     }
     /* check if the view will appear or not */
     override func viewWillAppear(_ animated: Bool) {
-        assignmentArryy = NSMutableArray(array:Bridging.queryForAllNewNewAssignments());
+        assignmentArryy = NSMutableArray(array:Bridging.queryForAllTasks());
         self.navigationItem.title = "Tasks"
         listTableView.reloadData()
     }
@@ -72,8 +72,8 @@ class Tasks: UIViewController, UITableViewDataSource {
         {
             let target: AssignmentObjc = assignmentArryy[indexPath.row] as! AssignmentObjc;
             assignmentArryy.remove(at: indexPath.row)
-            assignmentArryy = NSMutableArray(array:Bridging.queryForAllNewNewAssignments());
-            Bridging.deleteNewNewAssignment(byId: target.pkid);
+            assignmentArryy = NSMutableArray(array:Bridging.queryForAllTasks());
+            Bridging.deleteTasks(byId: target.pkid);
         }
         listTableView.reloadData()
 

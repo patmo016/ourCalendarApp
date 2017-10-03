@@ -29,7 +29,7 @@ class addMeeting: UIViewController {
                 meetings.append(groupinfo.text!)
                 meetingTimes.append(meetingtime.text!)
                 meetingLoc.append(meetinglocation.text!)
-                Bridging.insertNewNewAssignmentObjc(ass);
+                Bridging.insertMeetingsObjc(ass);
 
             }
             if prevGroupInfo != "" && prevMeetingTime != "" && prevMeetingLocation != ""
