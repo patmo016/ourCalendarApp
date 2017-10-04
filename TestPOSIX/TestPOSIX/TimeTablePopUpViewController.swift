@@ -109,8 +109,9 @@ class TimeTablePopUpViewController: UIViewController {
     /* when user hits submit */
     @IBAction func submit(_ sender: Any) {
         
-
+        
         if (classText.text != "" && locationText.text != "" && startTime.text != "")
+//        let cal: CalendarObjc = CalendarObjc.init(pkid: <#T##NSNumber!#>, classes: <#T##String!#>, starttime: <#T##String!#>, days: <#T##String!#>, weekly: <#T##String!#>, fortnightly: <#T##String!#>, location: <#T##String!#>)
      {
         
         plans.append(classText.text! + "\n" + locationText.text! + "\n" + startTime.text!)

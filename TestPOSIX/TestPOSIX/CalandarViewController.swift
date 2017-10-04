@@ -75,6 +75,7 @@ class CalandarViewController: UIViewController, UITableViewDelegate, UITableView
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
+        //take from array from database
         cell.textLabel?.text = plans[indexPath.row]
         
         return cell
