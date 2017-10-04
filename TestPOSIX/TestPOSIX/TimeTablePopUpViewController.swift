@@ -30,6 +30,12 @@ class TimeTablePopUpViewController: UIViewController {
     var wednesday: BooleanLiteralType! = false
     var thursday : BooleanLiteralType! = false
     var friday : BooleanLiteralType! = false
+    var days = ""
+    
+    var weekly: BooleanLiteralType! = false
+    var fortnightly: BooleanLiteralType! = false
+    var repeatedFort = ""
+    var repeatedWeek = ""
     
     let datePicker = UIDatePicker()
     
@@ -81,7 +87,46 @@ class TimeTablePopUpViewController: UIViewController {
             }
             sender.setBackgroundImage(UIImage(named: "checkbox.png"), for: UIControlState.normal)
             sender.isSelected = true;
+            //let space = " "
+            days += " "
+            days += sender.titleLabel!.text!
 //            schedule.append(" " + sender.titleLabel!.text!)
+        }
+    }
+    @IBAction func repeatcheckbox(_ sender: UIButton) {
+        // Instead of specifying each button we are just using the sender (button that invoked) the method
+        if (sender.isSelected == true)
+        {
+            print(sender.titleLabel!.text!)
+            if (sender.titleLabel!.text! == "Weekly"){
+                weekly = false
+            }else if (sender.titleLabel!.text == "Fortnightly"){
+                fortnightly = false
+            }
+      
+            
+            sender.setBackgroundImage(UIImage(named: "uncheckedBox.png"), for: UIControlState.normal)
+            sender.isSelected = false;
+            //need to remove if already selected day
+        }
+        else
+        {
+            if (sender.titleLabel!.text! == "Monday"){
+                weekly = true
+            }else if (sender.titleLabel!.text == "Tuesday"){
+                fortnightly = true
+            }
+                
+           
+            sender.setBackgroundImage(UIImage(named: "checkbox.png"), for: UIControlState.normal)
+            sender.isSelected = true;
+            if (weekly == true){
+                repeatedWeek = "Weekly"
+            }
+            if (fortnightly == true){
+                repeatedFort = "Fortnightly"
+            }
+            //            schedule.append(" " + sender.titleLabel!.text!)
         }
     }
     /* when user closes the Pop up UI.*/
@@ -110,63 +155,18 @@ class TimeTablePopUpViewController: UIViewController {
     @IBAction func submit(_ sender: Any) {
         
         
-        if (classText.text != "" && locationText.text != "" && startTime.text != "")
-//        let cal: CalendarObjc = CalendarObjc.init(pkid: <#T##NSNumber!#>, classes: <#T##String!#>, starttime: <#T##String!#>, days: <#T##String!#>, weekly: <#T##String!#>, fortnightly: <#T##String!#>, location: <#T##String!#>)
-     {
+        if (classText.text != "" && locationText.text != "" && startTime.text != ""){
+        let cal: CalendarObjc = CalendarObjc.init(pkid: 0, classes: classText.text, starttime: startTime.text, days: days, weekly: repeatedWeek, fortnightly: repeatedFort, location: locationText.text)
+            Bridging.insert(cal)
+            
+    // + (void)insertCalendarObjc:(CalendarObjc *)calobjc;
         
-        plans.append(classText.text! + "\n" + locationText.text! + "\n" + startTime.text!)
+        //plans.append(classText.text! + "\n" + locationText.text! + "\n" + startTime.text!)
 //        schedule.append(classText.text! + "\n" + locationText.text! + "\n" + startTime.text!)
 //
         
-        let ttime = startTime.text
-        var ttimeArr = ttime!.components(separatedBy: ":")
-        let clock = ttimeArr[0]
-        var row = Int(clock)! - 8
-        let rest = ttimeArr[1]
-        var restArr = rest.components(separatedBy: " ")
-        let afterevening = restArr[1]
-        
-        if (afterevening == "PM" && Int(clock) != 12) {
-            row = row + 12
-        }
-//
-//        if (monday == true){
-//            column = 0
-//            if(items[column+row*5] != ""){
-//            alertMessage(title: "Override Error", alert: "There is already an event at this time", location: column+row*5, content: classText.text! + "\n" + locationText.text! + "\n" + startTime.text!)
-//            }else{
-//
-//            items[column+row*5] = classText.text! + "\n" + locationText.text! + "\n" + startTime.text!
-//        }
-//        }
-//        if (tuesday == true){
-//            column = 1
-//            if(items[column+row*5] != ""){
-//                alertMessage(title: "Override Error", alert: "There is already an event at this time", location: column+row*5, content: classText.text! + "\n" + locationText.text! + "\n" + startTime.text!)
-//            }
-//                 items[column+row*5] = classText.text! + "\n" + locationText.text! + "\n" + startTime.text!
-//        }
-//        if (wednesday == true){
-//            column = 2
-//            if(items[column+row*5] != ""){
-//                alertMessage(title: "Override Error", alert: "There is already an event at this time", location: column+row*5, content: classText.text! + "\n" + locationText.text! + "\n" + startTime.text!)
-//                 items[column+row*5] = classText.text! + "\n" + locationText.text! + "\n" + startTime.text!
-//            }
-//        }
-//        if (thursday == true){
-//            column = 3
-//            if(items[column+row*5] != ""){
-//                alertMessage(title: "Override Error", alert: "There is already an event at this time", location: column+row*5, content: classText.text! + "\n" + locationText.text! + "\n" + startTime.text!)
-//                 items[column+row*5] = classText.text! + "\n" + locationText.text! + "\n" + startTime.text!
-//            }
-//        }
-//        if (friday == true){
-//            column = 4
-//            if(items[column+row*5] != ""){
-//                alertMessage(title: "Override Error", alert: "There is already an event at this time", location: column+row*5, content: classText.text! + "\n" + locationText.text! + "\n" + startTime.text!)
-//            }
-//                 items[column+row*5] = classText.text! + "\n" + locationText.text! + "\n" + startTime.text!
-//        }
+     
+    
         
    
         }
