@@ -81,7 +81,7 @@ class TimeTablePopUpViewController: UIViewController {
             }
             sender.setBackgroundImage(UIImage(named: "checkbox.png"), for: UIControlState.normal)
             sender.isSelected = true;
-            schedule.append(" " + sender.titleLabel!.text!)
+//            schedule.append(" " + sender.titleLabel!.text!)
         }
     }
     /* when user closes the Pop up UI.*/
@@ -95,7 +95,7 @@ class TimeTablePopUpViewController: UIViewController {
         //override
        let override = UIAlertAction(title: "Over ride", style: .default) {
             (action) in
-             items[location] = content
+           //  items[location] = content
         
         }
         let cancel = UIAlertAction(title: "Cancel", style: .cancel) {
@@ -114,8 +114,8 @@ class TimeTablePopUpViewController: UIViewController {
      {
         
         plans.append(classText.text! + "\n" + locationText.text! + "\n" + startTime.text!)
-        schedule.append(classText.text! + "\n" + locationText.text! + "\n" + startTime.text!)
-        
+//        schedule.append(classText.text! + "\n" + locationText.text! + "\n" + startTime.text!)
+//
         
         let ttime = startTime.text
         var ttimeArr = ttime!.components(separatedBy: ":")
@@ -128,44 +128,44 @@ class TimeTablePopUpViewController: UIViewController {
         if (afterevening == "PM" && Int(clock) != 12) {
             row = row + 12
         }
-        
-        if (monday == true){
-            column = 0
-            if(items[column+row*5] != ""){
-            alertMessage(title: "Override Error", alert: "There is already an event at this time", location: column+row*5, content: classText.text! + "\n" + locationText.text! + "\n" + startTime.text!)
-            }else{
-            
-            items[column+row*5] = classText.text! + "\n" + locationText.text! + "\n" + startTime.text!
-        }
-        }
-        if (tuesday == true){
-            column = 1
-            if(items[column+row*5] != ""){
-                alertMessage(title: "Override Error", alert: "There is already an event at this time", location: column+row*5, content: classText.text! + "\n" + locationText.text! + "\n" + startTime.text!)
-            }
-                 items[column+row*5] = classText.text! + "\n" + locationText.text! + "\n" + startTime.text!
-        }
-        if (wednesday == true){
-            column = 2
-            if(items[column+row*5] != ""){
-                alertMessage(title: "Override Error", alert: "There is already an event at this time", location: column+row*5, content: classText.text! + "\n" + locationText.text! + "\n" + startTime.text!)
-                 items[column+row*5] = classText.text! + "\n" + locationText.text! + "\n" + startTime.text!
-            }
-        }
-        if (thursday == true){
-            column = 3
-            if(items[column+row*5] != ""){
-                alertMessage(title: "Override Error", alert: "There is already an event at this time", location: column+row*5, content: classText.text! + "\n" + locationText.text! + "\n" + startTime.text!)
-                 items[column+row*5] = classText.text! + "\n" + locationText.text! + "\n" + startTime.text!
-            }
-        }
-        if (friday == true){
-            column = 4
-            if(items[column+row*5] != ""){
-                alertMessage(title: "Override Error", alert: "There is already an event at this time", location: column+row*5, content: classText.text! + "\n" + locationText.text! + "\n" + startTime.text!)
-            }
-                 items[column+row*5] = classText.text! + "\n" + locationText.text! + "\n" + startTime.text!
-        }
+//
+//        if (monday == true){
+//            column = 0
+//            if(items[column+row*5] != ""){
+//            alertMessage(title: "Override Error", alert: "There is already an event at this time", location: column+row*5, content: classText.text! + "\n" + locationText.text! + "\n" + startTime.text!)
+//            }else{
+//
+//            items[column+row*5] = classText.text! + "\n" + locationText.text! + "\n" + startTime.text!
+//        }
+//        }
+//        if (tuesday == true){
+//            column = 1
+//            if(items[column+row*5] != ""){
+//                alertMessage(title: "Override Error", alert: "There is already an event at this time", location: column+row*5, content: classText.text! + "\n" + locationText.text! + "\n" + startTime.text!)
+//            }
+//                 items[column+row*5] = classText.text! + "\n" + locationText.text! + "\n" + startTime.text!
+//        }
+//        if (wednesday == true){
+//            column = 2
+//            if(items[column+row*5] != ""){
+//                alertMessage(title: "Override Error", alert: "There is already an event at this time", location: column+row*5, content: classText.text! + "\n" + locationText.text! + "\n" + startTime.text!)
+//                 items[column+row*5] = classText.text! + "\n" + locationText.text! + "\n" + startTime.text!
+//            }
+//        }
+//        if (thursday == true){
+//            column = 3
+//            if(items[column+row*5] != ""){
+//                alertMessage(title: "Override Error", alert: "There is already an event at this time", location: column+row*5, content: classText.text! + "\n" + locationText.text! + "\n" + startTime.text!)
+//                 items[column+row*5] = classText.text! + "\n" + locationText.text! + "\n" + startTime.text!
+//            }
+//        }
+//        if (friday == true){
+//            column = 4
+//            if(items[column+row*5] != ""){
+//                alertMessage(title: "Override Error", alert: "There is already an event at this time", location: column+row*5, content: classText.text! + "\n" + locationText.text! + "\n" + startTime.text!)
+//            }
+//                 items[column+row*5] = classText.text! + "\n" + locationText.text! + "\n" + startTime.text!
+//        }
         
    
         }
