@@ -38,6 +38,7 @@
 		C709CE971F8312FA003BDD4A /* sqlite_operations.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C709CE8A1F8312FA003BDD4A /* sqlite_operations.cpp */; };
 		C709CE981F8312FA003BDD4A /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C709CE8D1F8312FA003BDD4A /* TableViewController.m */; };
 		C709CE991F8312FA003BDD4A /* TestPOSIX-Bridging-Header.mm in Sources */ = {isa = PBXBuildFile; fileRef = C709CE901F8312FA003BDD4A /* TestPOSIX-Bridging-Header.mm */; };
+		C77AE9801F848FB700773E79 /* CalandarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77AE97F1F848FB700773E79 /* CalandarViewController.swift */; };
 		FDBFAF5D1ED8890400C33278 /* CalendarObjc.hm in Resources */ = {isa = PBXBuildFile; fileRef = FDBFAF5C1ED8890400C33278 /* CalendarObjc.hm */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +88,7 @@
 		C709CE8E1F8312FA003BDD4A /* TestPOSIX-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestPOSIX-Bridging-Header.h"; sourceTree = "<group>"; };
 		C709CE8F1F8312FA003BDD4A /* TestPOSIX-Bridging-Header.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = "TestPOSIX-Bridging-Header.hpp"; sourceTree = "<group>"; };
 		C709CE901F8312FA003BDD4A /* TestPOSIX-Bridging-Header.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "TestPOSIX-Bridging-Header.mm"; sourceTree = "<group>"; };
+		C77AE97F1F848FB700773E79 /* CalandarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalandarViewController.swift; sourceTree = "<group>"; };
 		FDBFAF5C1ED8890400C33278 /* CalendarObjc.hm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CalendarObjc.hm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -139,6 +141,7 @@
 				03C7881E1ED6B51D00C643A9 /* MeetingsViewController.swift */,
 				247897F31F3FD91400EC6C4C /* addMeeting.swift */,
 				03CE8BD51EDA6B6A0004A336 /* MeetingPopUpViewController.swift */,
+				C77AE97F1F848FB700773E79 /* CalandarViewController.swift */,
 				03C7882D1ED6B54400C643A9 /* MainSwift.storyboard */,
 				0349AF631ED1898D00CF3FC7 /* AppDelegate.mm */,
 				0349AF4C1ED16CE200CF3FC7 /* AppDelegate.h */,
@@ -342,6 +345,7 @@
 				C709CE961F8312FA003BDD4A /* CalendarObjc.mm in Sources */,
 				0349AF641ED1898D00CF3FC7 /* AppDelegate.mm in Sources */,
 				03CE8BD81EDA6B6A0004A336 /* MeetingsTableViewCell.swift in Sources */,
+				C77AE9801F848FB700773E79 /* CalandarViewController.swift in Sources */,
 				03C788261ED6B51D00C643A9 /* Deadlines.swift in Sources */,
 				C709CE981F8312FA003BDD4A /* TableViewController.m in Sources */,
 				03C788231ED6B51D00C643A9 /* AddDeadlines.swift in Sources */,
