@@ -100,7 +100,7 @@ void view () {
 /*
  update a name of record based on the times.
  */
-void updateName(char* timer, char* name) {
+void updateName(const char* timer, const char* name) {
     string updateusers = "UPDATE users SET lecture = '";
     string where = " WHERE time = '";
     string topcomma = "'";
@@ -119,13 +119,34 @@ void updateName(char* timer, char* name) {
         fprintf(stdout, "Records updated successfully\n");
     }
     
+}
+
+
+void updateNameByName(const char* name) {
+    string updateusers = "UPDATE thirduser SET lecture = '";
+    string where = " WHERE lecture = '";
+    string topcomma = "'";
+    string comma = ",";
+    string bracelet = "); ";
+    string simicolon = ";";
+    
+    string sqlinfo = updateusers + name + topcomma + where + name + topcomma + simicolon;
+    sql = &sqlinfo[0u];
+    cout << sql;
+    rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
+    if( rc != SQLITE_OK ){
+        fprintf(stderr, "SQL error: %s\n", zErrMsg);
+        sqlite3_free(zErrMsg);
+    }else{
+        fprintf(stdout, "Records updated successfully\n");
+    }
     
 }
 
 /*
  update a name of record based on the times.
  */
-void updatePosition(char* timer, char* positioner) {
+void updatePosition(const char* timer, const char* positioner) {
     string updateusers = "UPDATE users SET position = '";
     string where = " WHERE time = '";
     string topcomma = "'";
@@ -153,7 +174,7 @@ void updatePosition(char* timer, char* positioner) {
  insert a record to the database.
  */
 void insertAssignment(const char* lectures, const char* times, const char* positions) {
-
+    
     ostringstream os;
     os << "INSERT INTO users (lecture, time, position) VALUES ('" << lectures << "','"<< times << "','" << positions << "')";
     sqlite3_exec(db, os.str().c_str(), [](void *foo, int columnNum, char **columnTexts, char **columnNames){return 0;}, NULL, NULL);
@@ -166,13 +187,13 @@ void insertCalendarInfo(const char* classes, const char* starttime, const char* 
     ostringstream os;
     os << "INSERT INTO calendar (classes, starttime, days, weekly, fortnightly, location) VALUES ('" << classes << "','"<< starttime << "','" << days << "','" << weekly << "','" << fortnightly << "','" << location << "')";
     sqlite3_exec(db, os.str().c_str(), [](void *foo, int columnNum, char **columnTexts, char **columnNames){return 0;}, NULL, NULL);
-
+    
     
 }
 
 
 void insertMeetings(const char* lectures, const char* times, const char* positions) {
-
+    
     ostringstream os;
     os << "INSERT INTO newuser (lecture, time, position) VALUES ('" << lectures << "','"<< times << "','" << positions << "')";
     sqlite3_exec(db, os.str().c_str(), [](void *foo, int columnNum, char **columnTexts, char **columnNames){return 0;}, NULL, NULL);
@@ -182,15 +203,15 @@ void insertMeetings(const char* lectures, const char* times, const char* positio
 
 
 void insertTasks(const char* lectures, const char* times, const char* positions) {
-
+    
     ostringstream os;
     os << "INSERT INTO thirduser (lecture, time, position) VALUES ('" << lectures << "','"<< times << "','" << positions << "')";
     sqlite3_exec(db, os.str().c_str(), [](void *foo, int columnNum, char **columnTexts, char **columnNames){return 0;}, NULL, NULL);
     
 }
 
-/* 
- a new sqlite query for conenct with the swift code. 
+/*
+ a new sqlite query for conenct with the swift code.
  */
 AssignmentCpp::AssignmentCpp(int pkid, string lecture, string time, string position): pkid(pkid), lecture(lecture), time(time), position(position) {}
 
@@ -281,6 +302,26 @@ void insertMeetingsCpp(AssignmentCpp asscpp) {
 
 void insertTasksCpp(AssignmentCpp asscpp) {
     insertTasks(asscpp.lecture.c_str(), asscpp.time.c_str(), asscpp.position.c_str());
+    
+}
+
+void updateNewAssignmentBynameCpp(AssignmentCpp asscpp) {
+    updateName(asscpp.time.c_str(), asscpp.lecture.c_str());
+    
+    
+}
+
+void updateNameByNameCpp(AssignmentCpp asscpp) {
+    updateNameByName(asscpp.lecture.c_str());
+    
+    
+}
+
+
+void updateNewAssignmentByposCpp(AssignmentCpp asscpp) {
+    updateName(asscpp.time.c_str(), asscpp.lecture.c_str());
+    
+    
 }
 
 
@@ -327,3 +368,4 @@ bool deleteCalendarById(int pkid) {
     os << "DELETE FROM calendar WHERE id = " << pkid;
     return sqlite3_exec(db, os.str().c_str(), [](void *foo, int columnNum, char **columnTexts, char **columnNames){return 0;}, NULL, NULL) == SQLITE_OK;
 }
+

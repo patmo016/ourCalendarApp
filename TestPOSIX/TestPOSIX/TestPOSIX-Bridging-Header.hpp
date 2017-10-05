@@ -31,6 +31,18 @@ CalendarCpp calendarCppFromCalendarObjc(CalendarObjc *calobjc);
 
 + (void)insertNewAssignmentCpp:(AssignmentCpp)asscpp;
 
++ (void)updateNewAssignmentByposCpp:(AssignmentCpp)asscpp;
+
++ (void)updateNameByNameCpp:(AssignmentCpp)asscpp;
+
++ (void)updateNewAssignmentBynameCpp:(AssignmentCpp)asscpp;
+
++ (void)updateNewAssignmentBynameObjc:(AssignmentObjc *)assobjc;
+
++ (void)updateNewAssignmentByposObjc:(AssignmentObjc *)assobjc;
+
++ (void)updateNameByNameObjc:(AssignmentObjc *)assobjc;
+
 + (void)insertMeetingsObjc:(AssignmentObjc *)assobjc;
 
 + (void)insertTasksObjc:(AssignmentObjc *)assobjc;
@@ -48,3 +60,4 @@ CalendarCpp calendarCppFromCalendarObjc(CalendarObjc *calobjc);
 @end
 
 #endif /* TestPOSIX_Bridging_Header_h */
+

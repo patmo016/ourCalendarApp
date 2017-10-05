@@ -1,8 +1,7 @@
 import UIKit
 import UserNotifications
 
-var deadlineNames: [String] = []
-var deadlineTimes: [String] = []
+var assignmentArr : NSMutableArray = [];
 
 class Deadlines: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var myTableView: UITableView!
@@ -26,27 +25,30 @@ class Deadlines: UIViewController, UITableViewDelegate, UITableViewDataSource {
             {
                 editDeadline?.prevDeadlineName = cell.nameLabel.text!
                 editDeadline?.prevDeadlineTime = cell.timeLabel.text!
-                editDeadline?.indexPathRow = deadlineNames.index(of: cell.nameLabel.text!)!
+                editDeadline?.indexPathRow = assignmentArr.index(of: cell.nameLabel.text!)
             }
         }
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return deadlineNames.count
+        return assignmentArr.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = myTableView.dequeueReusableCell(withIdentifier: "deadline", for: indexPath) as! DeadlinesCell
-        cell.nameLabel.text = deadlineNames[indexPath.row]
-        cell.timeLabel.text = deadlineTimes[indexPath.row]
+        
+        cell.nameLabel.text = (assignmentArr[indexPath.row] as! AssignmentObjc).lecture;
+        cell.timeLabel.text = (assignmentArr[indexPath.row] as! AssignmentObjc).time;
         
         return(cell)
     }
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete
         {
-            deadlineNames.remove(at: indexPath.row)
-            deadlineTimes.remove(at: indexPath.row)
-            myTableView.reloadData()
+            let target: AssignmentObjc = assignmentArr[indexPath.row] as! AssignmentObjc;
+            assignmentArr.remove(at: indexPath.row)
+            assignmentArr = NSMutableArray(array: Bridging.queryForAllAssignments());
+            Bridging.deleteAssignment(byId: target.pkid);
         }
+        myTableView.reloadData()
     }
     override func viewDidLoad() {
         let center = UNUserNotificationCenter.current()
@@ -57,6 +59,7 @@ class Deadlines: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        assignmentArr = NSMutableArray(array: Bridging.queryForAllAssignments());
         myTableView.reloadData()
     }
     func createAlert(notification: Notification) -> Void

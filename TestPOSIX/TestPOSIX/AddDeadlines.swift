@@ -16,18 +16,20 @@ class AddDeadlines: UIViewController {
     {
         if deadlineName.text != "" && deadlineTime.text != "" && prevDeadlineName == "" && prevDeadlineTime == ""
         {
-            deadlineNames.append(deadlineName.text!)
-            deadlineTimes.append(deadlineTime.text!)
+            let assignment: AssignmentObjc = AssignmentObjc.init(pkid: -1, lecture: deadlineName.text!, time: deadlineTime.text!, position: "")
+            Bridging.insertNewAssignmentObjc(assignment);
             deadlineName.text = ""
             deadlineTime.text = ""
         }
         if prevDeadlineName != "" && prevDeadlineTime != "" && deadlineName.text != "" && deadlineTime.text != ""
         {
-            deadlineNames[indexPathRow] = deadlineName.text!
-            deadlineTimes[indexPathRow] = deadlineTime.text!
+            let assignment: AssignmentObjc = AssignmentObjc.init(pkid: -1, lecture: deadlineName.text!, time: deadlineTime.text!, position: "")
+        
+            Bridging.updateNewAssignmentBynameObjc(assignment)
             deadlineName.text = ""
             deadlineTime.text = ""
         }
+        
     }
     
     override func viewDidLoad() {

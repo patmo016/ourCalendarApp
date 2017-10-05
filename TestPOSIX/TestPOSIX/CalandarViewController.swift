@@ -10,8 +10,8 @@ import UIKit
 import JTAppleCalendar
 
 
-//var plans = ["class1", "class2", "class3"]
-var plans : NSMutableArray = [];
+var plans = ["class1", "class2", "class3"]
+//var plans : NSMutableArray = [];
 
 class CalandarViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var myTableView: UITableView!
@@ -75,14 +75,14 @@ class CalandarViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-//        let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
-         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ScheduleTableViewCell
+       let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
+       //  let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ScheduleTableViewCell
         //take from array from database
         print("TABLE VEIW")
-        plans = NSMutableArray(array:Bridging.queryForAllCalendar());
-        //cell.textLabel?.text =
-        cell.schedule.text = (plans[indexPath.row] as! CalendarObjc).classes
-        print(plans[indexPath.row] as! CalendarObjc)
+       // plans = NSMutableArray(array:Bridging.queryForAllCalendar());
+        cell.textLabel?.text = plans[indexPath.row]
+       // cell.schedule.text = (plans[indexPath.row] as! CalendarObjc).classes
+       // print(plans[indexPath.row] as! CalendarObjc)
         // cell.location.text = (assignmentArry[indexPath.row] as! AssignmentObjc).time;
         return cell
     
@@ -169,7 +169,7 @@ class CalandarViewController: UIViewController, UITableViewDelegate, UITableView
 
 
 }
-    
+
 extension CalandarViewController: JTAppleCalendarViewDataSource {
     
     func configureCalendar(_ calendar: JTAppleCalendarView) -> ConfigurationParameters {
@@ -242,3 +242,4 @@ extension CalandarViewController{
     ]
     }
 }
+

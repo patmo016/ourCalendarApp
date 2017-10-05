@@ -26,6 +26,12 @@
 
 + (void)insertCalendarObjc:(CalendarObjc *)calobjc;
 
++ (void)updateNewAssignmentByposObjc:(AssignmentObjc *)assobjc;
+
++ (void)updateNewAssignmentBynameObjc:(AssignmentObjc *)assobjc;
+
++ (void)updateNameByNameObjc:(AssignmentObjc *)assobjc;
+
 + (BOOL)deleteAssignmentById:(NSNumber *)pkid;
 
 + (BOOL)deleteMeetingsById:(NSNumber *)pkid;
@@ -38,3 +44,4 @@
 + (BOOL)deleteCalendarById:(NSNumber *)pkid;
 
 @end
+

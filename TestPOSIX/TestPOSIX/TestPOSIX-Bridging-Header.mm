@@ -66,7 +66,17 @@ using namespace std;
 
 
 
++ (void)updateNewAssignmentBynameCpp:(AssignmentCpp)asscpp {
+    updateNewAssignmentBynameCpp(asscpp);
+}
 
++ (void)updateNewAssignmentByposCpp:(AssignmentCpp)asscpp {
+    updateNewAssignmentByposCpp(asscpp);
+}
+
++ (void)updateNameByNameCpp:(AssignmentCpp)asscpp {
+    updateNameByNameCpp(asscpp);
+}
 
 
 + (void)insertNewAssignmentCpp:(AssignmentCpp)asscpp {
@@ -84,6 +94,22 @@ using namespace std;
 + (void)insertCalendarCpp:(CalendarCpp)calcpp {
     insertCalendarCpp(calcpp);
 }
+
+
++ (void)updateNewAssignmentBynameObjc:(AssignmentObjc *)assobjc {
+    [Bridging updateNewAssignmentBynameCpp:assignmentCppFromAssignmentObjc(assobjc)];
+}
+
++ (void)updateNewAssignmentByposObjc:(AssignmentObjc *)assobjc {
+    [Bridging updateNewAssignmentByposCpp:assignmentCppFromAssignmentObjc(assobjc)];
+}
+
++ (void)updateNameByNameObjc:(AssignmentObjc *)assobjc {
+    [Bridging updateNameByNameCpp:assignmentCppFromAssignmentObjc(assobjc)];
+}
+
+
+
 
 + (void)insertNewAssignmentObjc:(AssignmentObjc *)assobjc {
     [Bridging insertNewAssignmentCpp:assignmentCppFromAssignmentObjc(assobjc)];
@@ -121,8 +147,8 @@ using namespace std;
 
 
 /*+ (void)insertNewCalendarCpp:(CalendarCpp)calcpp {
-    insertNewCalendarCpp(calcpp);
-}*/
+ insertNewCalendarCpp(calcpp);
+ }*/
 
 
 
@@ -130,3 +156,4 @@ using namespace std;
 
 
 @end
+
