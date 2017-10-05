@@ -32,6 +32,8 @@
 
 + (void)updateNameByNameObjc:(AssignmentObjc *)assobjc;
 
++ (void)updateTasksObjc:(AssignmentObjc *)assobjc;
+
 + (BOOL)deleteAssignmentById:(NSNumber *)pkid;
 
 + (BOOL)deleteMeetingsById:(NSNumber *)pkid;

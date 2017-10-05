@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0820"
+   LastUpgradeVersion = "0830"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FCEAA1F1B92A4DFC14B48A10A46A8B57"
-               BuildableName = "sqlite3.framework"
-               BlueprintName = "sqlite3"
+               BlueprintIdentifier = "BFED2E29E95E065400F8846E0231A970"
+               BuildableName = "JTAppleCalendar.framework"
+               BlueprintName = "JTAppleCalendar"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FCEAA1F1B92A4DFC14B48A10A46A8B57"
-            BuildableName = "sqlite3.framework"
-            BlueprintName = "sqlite3"
+            BlueprintIdentifier = "BFED2E29E95E065400F8846E0231A970"
+            BuildableName = "JTAppleCalendar.framework"
+            BlueprintName = "JTAppleCalendar"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -63,9 +63,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FCEAA1F1B92A4DFC14B48A10A46A8B57"
-            BuildableName = "sqlite3.framework"
-            BlueprintName = "sqlite3"
+            BlueprintIdentifier = "BFED2E29E95E065400F8846E0231A970"
+            BuildableName = "JTAppleCalendar.framework"
+            BlueprintName = "JTAppleCalendar"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

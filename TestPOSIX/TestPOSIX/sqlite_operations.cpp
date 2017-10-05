@@ -168,6 +168,26 @@ void updatePosition(const char* timer, const char* positioner) {
     
 }
 
+void updateTasks(const char* timer, const char* name) {
+    string updateusers = "UPDATE thirduser SET lecture = '";
+    string where = " WHERE time = '";
+    string topcomma = "'";
+    string comma = ",";
+    string bracelet = "); ";
+    string simicolon = ";";
+    
+    string sqlinfo = updateusers + name + topcomma + where + timer + topcomma + simicolon;
+    sql = &sqlinfo[0u];
+    cout << sql;
+    rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
+    if( rc != SQLITE_OK ){
+        fprintf(stderr, "SQL error: %s\n", zErrMsg);
+        sqlite3_free(zErrMsg);
+    }else{
+        fprintf(stdout, "Records updated successfully\n");
+    }
+}
+
 
 
 /*
@@ -316,6 +336,12 @@ void updateNameByNameCpp(AssignmentCpp asscpp) {
     
     
 }
+
+void updateTasksCpp(AssignmentCpp asscpp) {
+    updateTasks(asscpp.time.c_str(), asscpp.lecture.c_str());
+}
+
+
 
 
 void updateNewAssignmentByposCpp(AssignmentCpp asscpp) {

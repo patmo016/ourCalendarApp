@@ -7,10 +7,14 @@
 import UIKit
 
 var assignmentArryy : NSMutableArray = [];
+var prevTasks = String()
 
 
 class Tasks: UIViewController, UITableViewDataSource {
     
+    
+    
+
     var tasks: [String] = []
     
     @IBOutlet weak var listTableView: UITableView!
@@ -35,22 +39,59 @@ class Tasks: UIViewController, UITableViewDataSource {
             textfield.placeholder = "Add Your Task..."
             textfield.keyboardType = UIKeyboardType.default
         }
-        let add = UIAlertAction(title: "Add", style: .default) {
-            (action) in
-            let textfield = alert.textFields![0]
-            let ass: AssignmentObjc = AssignmentObjc.init(pkid: -1, lecture: textfield.text!, time: "", position: "");
-            self.tasks.append(textfield.text!)
-            Bridging.insertTasksObjc(ass);
-            self.viewWillAppear(true)
+        if (prevTasks == "") {
+            let add = UIAlertAction(title: "Add", style: .default) {
+                (action) in
+                let textfield = alert.textFields![0]
+                let ass: AssignmentObjc = AssignmentObjc.init(pkid: -1, lecture: textfield.text!, time: "", position: "");
+                self.tasks.append(textfield.text!)
+                Bridging.insertTasksObjc(ass);
+                self.viewWillAppear(true)
         }
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel) {
-            (alert) in
+            let cancel = UIAlertAction(title: "Cancel", style: .cancel) {
+                (alert) in
+            }
+            alert.addAction(add)
+            alert.addAction(cancel)
+            present(alert,animated: true, completion: nil)
+        } else if (prevTasks != "") {
+            let add = UIAlertAction(title: "Add", style: .default) {
+                (action) in
+                let textfield = alert.textFields![0]
+                let ass: AssignmentObjc = AssignmentObjc.init(pkid: -1, lecture: textfield.text!, time: prevTasks, position: "");
+                self.tasks.append(textfield.text!)
+                Bridging.updateTasksObjc(ass);
+                self.viewWillAppear(true)
+            }
+            let cancel = UIAlertAction(title: "Cancel", style: .cancel) {
+                (alert) in
+            }
+            alert.addAction(add)
+            alert.addAction(cancel)
+            present(alert,animated: true, completion: nil)
         }
-        alert.addAction(add)
-        alert.addAction(cancel)
-        present(alert,animated: true, completion: nil)
     }
     
+//    @IBAction func addDeadline(_ sender: UIButton)
+//    {
+//        if deadlineName.text != "" && deadlineTime.text != "" && prevDeadlineName == "" && prevDeadlineTime == ""
+//        {
+//            let assignment: AssignmentObjc = AssignmentObjc.init(pkid: -1, lecture: deadlineName.text!, time: deadlineTime.text!, position: "")
+//            Bridging.insertNewAssignmentObjc(assignment);
+//            deadlineName.text = ""
+//            deadlineTime.text = ""
+//        }
+//        if prevDeadlineName != "" && prevDeadlineTime != "" && deadlineName.text != "" && deadlineTime.text != ""
+//        {
+//            let assignment: AssignmentObjc = AssignmentObjc.init(pkid: -1, lecture: deadlineName.text!, time: deadlineTime.text!, position: "")
+//            
+//            Bridging.updateNewAssignmentBynameObjc(assignment)
+//            deadlineName.text = ""
+//            deadlineTime.text = ""
+//        }
+//        
+//    }
+//    
     /* everytime TasksViewController is called */
     override func viewDidLoad() {
         super.viewDidLoad()

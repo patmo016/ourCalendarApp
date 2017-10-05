@@ -32,6 +32,29 @@ class AddDeadlines: UIViewController {
         
     }
     
+    
+    /*
+    @IBAction func addDeadline(_ sender: UIButton)
+    {
+        if deadlineName.text != "" && deadlineTime.text != "" && prevDeadlineName == "" && prevDeadlineTime == ""
+        {
+            let assignment: AssignmentObjc = AssignmentObjc.init(pkid: -1, lecture: deadlineName.text!, time: deadlineTime.text!, position: "")
+            Bridging.insertNewAssignmentObjc(assignment);
+            deadlineName.text = ""
+            deadlineTime.text = ""
+        }
+        if prevDeadlineName != "" && prevDeadlineTime != "" && deadlineName.text != "" && deadlineTime.text != ""
+        {
+            let assignment: AssignmentObjc = AssignmentObjc.init(pkid: -1, lecture: deadlineName.text!, time: deadlineTime.text!, position: "")
+            
+            Bridging.updateNewAssignmentBynameObjc(assignment)
+            deadlineName.text = ""
+            deadlineTime.text = ""
+        }
+        
+    }
+ */
+    
     override func viewDidLoad() {
         createDatePicker()
         deadlineName.text = prevDeadlineName

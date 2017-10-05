@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>JTAppleCalendar.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
 		<key>Pods-TestPOSIX.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -23,6 +28,21 @@
 			<true/>
 		</dict>
 		<key>9A702BC99F7FC52848F156957689E52C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BFED2E29E95E065400F8846E0231A970</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C20BAB350C09D17ED7D763452C424AAD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FCEAA1F1B92A4DFC14B48A10A46A8B57</key>
 		<dict>
 			<key>primary</key>
 			<true/>

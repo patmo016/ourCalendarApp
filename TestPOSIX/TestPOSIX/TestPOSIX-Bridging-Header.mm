@@ -70,6 +70,10 @@ using namespace std;
     updateNewAssignmentBynameCpp(asscpp);
 }
 
++ (void)updateTasksCpp:(AssignmentCpp)asscpp {
+    updateTasksCpp(asscpp);
+}
+
 + (void)updateNewAssignmentByposCpp:(AssignmentCpp)asscpp {
     updateNewAssignmentByposCpp(asscpp);
 }
@@ -109,7 +113,9 @@ using namespace std;
 }
 
 
-
++ (void)updateTasksObjc:(AssignmentObjc *)assobjc {
+    [Bridging updateTasksCpp:assignmentCppFromAssignmentObjc(assobjc)];
+}
 
 + (void)insertNewAssignmentObjc:(AssignmentObjc *)assobjc {
     [Bridging insertNewAssignmentCpp:assignmentCppFromAssignmentObjc(assobjc)];
