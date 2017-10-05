@@ -226,10 +226,16 @@ void insertAssignment(const char* lectures, const char* times, const char* posit
 // doubt it's going to work cuz may have error concanating sqlinfo
 void insertCalendarInfo(const char* classes, const char* starttime, const char* days, const char* weekly, const char* fortnightly, const char* location) {
     ostringstream os;
-    os << "INSERT INTO calendar (classes, starttime, days, weekly, fortnightly, location) VALUES ('" << classes << "','"<< starttime << "','" << days << "','" << weekly << "','" << fortnightly << "','" << location << "')";
-    sqlite3_exec(db, os.str().c_str(), [](void *foo, int columnNum, char **columnTexts, char **columnNames){return 0;}, NULL, NULL);
-    
-    
+    //os << "INSERT INTO calendar (class, starttime, days, weekly, fortnightly, location) VALUES ('" << classes << "','"<< starttime << "','" << days << "','" << weekly << "','" << fortnightly << "','" << location << "');";
+    os << "INSERT INTO calendar [(class, starttime, days, weekly, fortnightly, location)] VALUES ('COSC343', '5:30PM', 'Monday Friday', 'No', 'YES', 'BURNS7')";    rc = sqlite3_exec(db, os.str().c_str(), [](void *foo, int columnNum, char **columnTexts, char **columnNames){return 0;}, NULL, NULL);
+    if (rc != SQLITE_OK) {
+        fprintf(stderr, "insertCalendar is not working!!!!!!: \n");
+        cout << os.str();
+        sqlite3_free(zErrMsg);
+    }
+    else{
+        fprintf(stdout, "insertCalendar updated successfully\n");
+    }
 }
 
 

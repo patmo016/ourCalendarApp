@@ -26,7 +26,7 @@ using namespace std;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    NSString *dbFilePathInDocDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0] stringByAppendingPathComponent:@"finaldb.db"];
+    NSString *dbFilePathInDocDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0] stringByAppendingPathComponent:@"newdb.db"];
     NSLog(@"%@", dbFilePathInDocDir);
     
     if (![[NSFileManager defaultManager] fileExistsAtPath:dbFilePathInDocDir]) {

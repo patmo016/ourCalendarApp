@@ -37,6 +37,8 @@ CalendarCpp calendarCppFromCalendarObjc(CalendarObjc *calobjc);
 
 + (void)updateNewAssignmentBynameCpp:(AssignmentCpp)asscpp;
 
++ (void)updateMeetingsCpp:(AssignmentCpp)asscpp;
+
 + (void)updateNewAssignmentBynameObjc:(AssignmentObjc *)assobjc;
 
 + (void)updateNewAssignmentByposObjc:(AssignmentObjc *)assobjc;

@@ -34,8 +34,8 @@ class TimeTablePopUpViewController: UIViewController {
     
     var weekly: BooleanLiteralType! = false
     var fortnightly: BooleanLiteralType! = false
-    var repeatedFort = ""
-    var repeatedWeek = ""
+    var repeatedFort = "false"
+    var repeatedWeek = "false"
     
     let datePicker = UIDatePicker()
     
@@ -159,6 +159,7 @@ class TimeTablePopUpViewController: UIViewController {
         let cal: CalendarObjc = CalendarObjc.init(pkid: 0, classes: classText.text, starttime: startTime.text, days: days, weekly: repeatedWeek, fortnightly: repeatedFort, location: locationText.text)
             Bridging.insert(cal)
             
+            
     // + (void)insertCalendarObjc:(CalendarObjc *)calobjc;
         
         //plans.append(classText.text! + "\n" + locationText.text! + "\n" + startTime.text!)
@@ -172,7 +173,7 @@ class TimeTablePopUpViewController: UIViewController {
         }
         self.view.removeFromSuperview()
         self.removeAnimate()
-        NotificationCenter.default.post(name: .reload, object: nil)
+        //NotificationCenter.default.post(name: .reload, object: nil)
     }
     /* a object which enables user to select a date rather than inputing it */
     func createDatePicker()

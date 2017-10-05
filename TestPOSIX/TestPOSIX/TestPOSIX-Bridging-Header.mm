@@ -59,7 +59,7 @@ using namespace std;
     return [Bridging convertToAssignmentObjcArrayWithAssignmentCppVector:assVec];
 }
 
-+ (NSArray *)queryForAllCalendars {
++ (NSArray *)queryForAllCalendar {
     auto calVec = queryForAllCalendar();
     return [Bridging convertToCalendarObjcArrayWithCalendarCppVector:calVec];
 }

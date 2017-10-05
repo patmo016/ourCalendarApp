@@ -8,9 +8,6 @@
 
 import UIKit
 
-var meetings: [String] = []
-var meetingTimes: [String] = []
-var meetingLoc: [String] = []
 var assignmentArry : NSMutableArray = [];
 
 class MeetingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
@@ -51,7 +48,8 @@ class MeetingsViewController: UIViewController, UITableViewDelegate, UITableView
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MeetingsTableViewCell
         cell.meetingLabel.text = (assignmentArry[indexPath.row] as! AssignmentObjc).lecture;
-        cell.location.text = (assignmentArry[indexPath.row] as! AssignmentObjc).time;
+        cell.dateAndTime.text = (assignmentArry[indexPath.row] as! AssignmentObjc).time;
+        cell.location.text = (assignmentArry[indexPath.row] as! AssignmentObjc).position;
         return (cell)
     }
 
@@ -59,7 +57,7 @@ class MeetingsViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewDidLoad()
         meetingsList.reloadData()
         UITextField.appearance().tintColor = .black 
-        NotificationCenter.default.addObserver(self, selector: #selector(reloadTableData), name: .reload, object: nil)
+        //NotificationCenter.default.addObserver(self, selector: #selector(reloadTableData), name: .reload, object: nil)
 
     }
     

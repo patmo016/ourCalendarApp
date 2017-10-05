@@ -23,21 +23,15 @@ class addMeeting: UIViewController {
     {
         if groupinfo.text != "" && meetingtime.text != "" && meetinglocation.text != ""
         {
-            let ass: AssignmentObjc = AssignmentObjc.init(pkid: -1, lecture: groupinfo.text!, time: meetingtime.text!, position: "");
+            let ass: AssignmentObjc = AssignmentObjc.init(pkid: -1, lecture: groupinfo.text!, time: meetingtime.text!, position: meetinglocation.text!);
             if prevGroupInfo == "" && prevMeetingTime == "" && prevMeetingLocation == ""
             {
-                meetings.append(groupinfo.text!)
-                meetingTimes.append(meetingtime.text!)
-                meetingLoc.append(meetinglocation.text!)
                 Bridging.insertMeetingsObjc(ass);
 
             }
             if prevGroupInfo != "" && prevMeetingTime != "" && prevMeetingLocation != ""
             {
-                meetings[indexPathRow] = groupinfo.text!
-                meetingTimes[indexPathRow]  = meetingtime.text!
-                meetingLoc[indexPathRow] = meetinglocation.text!
-                
+                Bridging.updateMeetingsObjc(ass)
             }
             groupinfo.text = ""
             meetingtime.text = ""
