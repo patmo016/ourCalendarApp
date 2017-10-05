@@ -27,6 +27,7 @@ extern void updateName(char* timer, char* name);
 extern void updatePosition(char* timer, char* positioner);
 extern void updateNameByName(char* name);
 extern void updateTasks(char* timer, char* name);
+extern void updateMeetings(char* timer, char* name);
 extern void insertAssignment(const char* lectures, const char* times, const char* positions);
 extern void insertCalendarInfo(const char* classes, const char* starttime, const char* days, const char* weekly, const char* fortnightly, const char* location);
 extern void insertCalendar(const char *row, const char *col, const char *content, const char *color); // TODO: Mr. Chen, I will leave this to you. You'll implement it in sqlite_operations.cpp file, just like insertAssignment. I'm too lazy to write those boilerplate codes. -- Yutong Zhang
@@ -73,6 +74,7 @@ extern void updateNewAssignmentBynameCpp(AssignmentCpp asscpp);
 extern void updateNewAssignmentByposCpp(AssignmentCpp asscpp);
 extern void updateNameByNameCpp(AssignmentCpp asscpp);
 extern void updateTasksCpp(AssignmentCpp asscpp);
+extern void updateMeetingsCpp(AssignmentCpp asscpp);
 
 #endif /* sqlite_operations_hpp */
 
