@@ -13,7 +13,9 @@ class ScheduleTableViewCell: UITableViewCell {
      @IBOutlet weak var schedule: UILabel!
     
 
-//    override func awakeFromNib() {
+    @IBOutlet weak var location: UILabel!
+    @IBOutlet weak var time: UILabel!
+    //    override func awakeFromNib() {
 //        super.awakeFromNib()
 //        // Initialization code
 //    }

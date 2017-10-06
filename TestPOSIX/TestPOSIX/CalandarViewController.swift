@@ -8,10 +8,13 @@
 
 import UIKit
 import JTAppleCalendar
-
+import Foundation
 
 //var plans = ["class1", "class2", "class3"]
 var plans : NSMutableArray = [];
+var sched : NSMutableArray = [];
+
+
 
 class CalandarViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var myTableView: UITableView!
@@ -30,21 +33,35 @@ class CalandarViewController: UIViewController, UITableViewDelegate, UITableView
     
     let todaysDate = Date()
     
+    var limit : BooleanLiteralType = false
+    var dateSeleted = ""
+    
+    
+    
     //first string represents date but easier format to work with strings
     var eventsFromTheServer: [String: String] = [:]
     
     override func viewDidAppear(_ animated: Bool) {
-        plans = NSMutableArray(array:Bridging.queryForAllCalendar());
+//        plans = NSMutableArray(array:Bridging.queryForAllCalendar());
+//
+//        Bridging.queryForAllCalendar()
+        plans = NSMutableArray(array:Bridging.queryForAllMeetings());
+        plans.addObjects(from: Bridging.queryForAllAssignments());
+        plans.addObjects(from: Bridging.queryForAllTasks());
         
-        Bridging.queryForAllCalendar()
-        
+//
         myTableView.reloadData()
     }
     
     override func viewDidLoad()
     {
+        plans = NSMutableArray(array:Bridging.queryForAllMeetings());
+        plans.addObjects(from: Bridging.queryForAllAssignments());
+        plans.addObjects(from: Bridging.queryForAllTasks());
+        
         myTableView.reloadData()
         super.viewDidLoad()
+        UITextField.appearance().tintColor = .black 
         //
         DispatchQueue.global().asyncAfter(deadline: .now()){
             let serverObjects = self.getServerEvents()
@@ -73,21 +90,43 @@ class CalandarViewController: UIViewController, UITableViewDelegate, UITableView
  /*CREATES THE TABLE TO DISPLAY ALL EVENTS*/
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        //define number of rows as equal to the amount in the schedule
-        //currently returns all of the classes
+        if limit == true{
+            return (sched.count)
+        }else{
         return (plans.count)
+        }
+        
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-       let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
-       //let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ScheduleTableViewCell
-        //take from array from database
-       // print("TABLE VEIW")
-        cell.textLabel?.text = (plans[indexPath.row] as! CalendarObjc).classes
-        //cell.schedule.text = (plans[indexPath.row] as! CalendarObjc).classes
-       // print(plans[indexPath.row] as! CalendarObjc)
-        //cell.location.text = (assignmentArry[indexPath.row] as! AssignmentObjc).time;
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ScheduleTableViewCell
+        if(plans.count == 0){
+            cell.schedule.text = "You have no scheduled events"
+        }else{
+            
+        let test = (plans[indexPath.row] as! AssignmentObjc).time
+       
+        if(limit == true){
+            cell.schedule.text = (sched[indexPath.row] as! AssignmentObjc).lecture;
+            cell.location.text = (sched[indexPath.row] as! AssignmentObjc).position;
+            cell.time.text = (sched[indexPath.row] as! AssignmentObjc).time;
+           // print("found")
+        
+        }else if (limit == false){
+    print("limit is not true")
+     
+        
+        cell.schedule.text = (plans[indexPath.row] as! AssignmentObjc).lecture;
+        cell.location.text = (plans[indexPath.row] as! AssignmentObjc).position;
+        cell.time.text = (plans[indexPath.row] as! AssignmentObjc).time;
+        }
+        }
+        
         return cell
+        
     
     }
     
@@ -149,12 +188,31 @@ class CalandarViewController: UIViewController, UITableViewDelegate, UITableView
     /*HANDLES IF CELL IS SELECTED
         CHANGES THE COLOUR OF THE CELL*/
     func handleCellSelected( view: JTAppleCell?, cellState: CellState) {
+        
         guard let validcell = view as? CustomCell else {return}
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+        let datetoday = dateFormatter.string(from: todaysDate)
         if validcell.isSelected{
-           // print("selected")
-            //print(cellState.text)
+           
+            dateSeleted = dateFormatter.string(from: cellState.date)
+            //print(dateSeleted)
+            for p in plans{
+                if (p as! AssignmentObjc).time.contains(dateSeleted){
+                    sched.add(p)
+                }
+                
+            }
+            if(datetoday == dateSeleted){
+                print ("date is todays date")
+                
+            }
+            limit = true
+            myTableView.reloadData()
             validcell.selectedView.isHidden = false
         }else{
+            limit = false
+            sched.removeAllObjects()
             validcell.selectedView.isHidden = true
         }
     }
