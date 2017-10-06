@@ -173,10 +173,10 @@
             </objects>
             <point key="canvasLocation" x="3215" y="0.0"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Calendar-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController title="Calendar" id="49e-Tb-3d3" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
@@ -186,10 +186,10 @@
                         <color key="selectedImageTintColor" white="0.96999999999999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
+                        <segue destination="1le-sH-gcb" kind="relationship" relationship="viewControllers" id="Fla-rd-3Gf"/>
                         <segue destination="8mk-L0-GtZ" kind="relationship" relationship="viewControllers" id="Vh5-vy-jiO"/>
                         <segue destination="6Nh-wM-YFW" kind="relationship" relationship="viewControllers" id="25w-Q3-QNw"/>
                         <segue destination="98D-VI-NHO" kind="relationship" relationship="viewControllers" id="5jo-eH-tf2"/>
-                        <segue destination="1le-sH-gcb" kind="relationship" relationship="viewControllers" id="Fla-rd-3Gf"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -841,11 +841,11 @@
             </objects>
             <point key="canvasLocation" x="593" y="1032"/>
         </scene>
-        <!--Item-->
+        <!--Deadlines-->
         <scene sceneID="fhX-fb-XC1">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8mk-L0-GtZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="kU3-Tt-GQJ"/>
+                    <tabBarItem key="tabBarItem" title="Deadlines" image="deadlines_image.png" selectedImage="deadlines_image.png" id="kU3-Tt-GQJ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="tLI-rL-Pb7">
                         <autoresizingMask key="autoresizingMask"/>
@@ -1004,23 +1004,22 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="redDot.png" translatesAutoresizingMaskIntoConstraints="NO" id="AWy-XZ-5FG">
-                                                            <rect key="frame" x="38" y="68" width="39" height="30"/>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="red-dot.png" translatesAutoresizingMaskIntoConstraints="NO" id="ACl-a5-FBL" userLabel="eventDotView">
+                                                            <rect key="frame" x="46" y="90" width="8" height="8"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="30" id="5Ho-NG-8ov"/>
-                                                                <constraint firstAttribute="width" constant="39" id="hjy-tt-B2d"/>
+                                                                <constraint firstAttribute="height" constant="8" id="1mZ-an-Mwr"/>
+                                                                <constraint firstAttribute="width" constant="8" id="zOi-O2-RwU"/>
                                                             </constraints>
                                                         </imageView>
                                                     </subviews>
                                                 </view>
                                                 <constraints>
+                                                    <constraint firstItem="ACl-a5-FBL" firstAttribute="top" secondItem="cEk-t5-ypM" secondAttribute="bottom" constant="23.5" id="153-Pa-JZG"/>
                                                     <constraint firstItem="cEk-t5-ypM" firstAttribute="centerY" secondItem="0hu-cg-Fr2" secondAttribute="centerY" id="1pE-dr-CbC"/>
                                                     <constraint firstItem="cEk-t5-ypM" firstAttribute="centerX" secondItem="0hu-cg-Fr2" secondAttribute="centerX" id="3UT-oJ-CTj"/>
-                                                    <constraint firstItem="AWy-XZ-5FG" firstAttribute="leading" secondItem="0hu-cg-Fr2" secondAttribute="leading" constant="38" id="3bw-Ef-7wU"/>
                                                     <constraint firstItem="lB1-hP-vaP" firstAttribute="centerY" secondItem="0hu-cg-Fr2" secondAttribute="centerY" id="6Ai-AR-PHS"/>
-                                                    <constraint firstItem="AWy-XZ-5FG" firstAttribute="top" secondItem="cEk-t5-ypM" secondAttribute="bottom" constant="1.5" id="YTl-V0-SbI"/>
-                                                    <constraint firstAttribute="bottom" secondItem="AWy-XZ-5FG" secondAttribute="bottom" id="ZXJ-Xd-lin"/>
-                                                    <constraint firstAttribute="trailing" secondItem="AWy-XZ-5FG" secondAttribute="trailing" constant="41" id="dMp-0e-mbv"/>
+                                                    <constraint firstAttribute="bottom" secondItem="ACl-a5-FBL" secondAttribute="bottom" id="Pgj-2H-CYU"/>
+                                                    <constraint firstItem="ACl-a5-FBL" firstAttribute="centerX" secondItem="0hu-cg-Fr2" secondAttribute="centerX" id="pdJ-6h-Mba"/>
                                                     <constraint firstItem="lB1-hP-vaP" firstAttribute="centerX" secondItem="0hu-cg-Fr2" secondAttribute="centerX" id="voF-Ig-LuR"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
@@ -1030,7 +1029,7 @@
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <outlet property="dateLabel" destination="lB1-hP-vaP" id="xEj-Ns-VAU"/>
-                                                    <outlet property="eventDotView" destination="AWy-XZ-5FG" id="7Qm-Su-IGg"/>
+                                                    <outlet property="eventDotView" destination="ACl-a5-FBL" id="pkT-CT-Vf1"/>
                                                     <outlet property="selectedView" destination="cEk-t5-ypM" id="LKr-YM-Q6G"/>
                                                 </connections>
                                             </collectionViewCell>
@@ -1134,7 +1133,7 @@
                             <constraint firstItem="p5L-UB-cbH" firstAttribute="top" secondItem="5YQ-rq-eBN" secondAttribute="top" id="hBe-ir-0zR"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Calandar" id="b1C-JS-vaR"/>
+                    <tabBarItem key="tabBarItem" title="Calandar" image="calendarImage.png" selectedImage="calendarImage.png" id="b1C-JS-vaR"/>
                     <connections>
                         <outlet property="calendarView" destination="ZnH-q8-d8h" id="k4Y-jv-IOp"/>
                         <outlet property="month" destination="owA-hI-vXz" id="sqm-ok-abb"/>
@@ -1149,9 +1148,11 @@
     </scenes>
     <resources>
         <image name="addButton.png" width="128" height="128"/>
+        <image name="calendarImage.png" width="28" height="28"/>
         <image name="checkbox.png" width="233" height="216"/>
+        <image name="deadlines_image.png" width="28" height="28"/>
         <image name="meeting_Image.png" width="28" height="28"/>
-        <image name="redDot.png" width="16" height="16"/>
+        <image name="red-dot.png" width="300" height="300"/>
         <image name="task_image.png" width="28" height="28"/>
         <image name="uncheckedBox.png" width="225" height="225"/>
     </resources>

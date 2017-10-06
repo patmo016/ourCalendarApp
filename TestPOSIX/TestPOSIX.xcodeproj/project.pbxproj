@@ -28,6 +28,7 @@
 		03CE8BD81EDA6B6A0004A336 /* MeetingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CE8BD61EDA6B6A0004A336 /* MeetingsTableViewCell.swift */; };
 		247897F41F3FD91400EC6C4C /* addMeeting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247897F31F3FD91400EC6C4C /* addMeeting.swift */; };
 		2EB364FAEA6E0E453E199EA5 /* Pods_TestPOSIX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EF9BC89F610B7108A3A2006 /* Pods_TestPOSIX.framework */; };
+		4707C4091F872C4B0069BA19 /* red-dot.png in Resources */ = {isa = PBXBuildFile; fileRef = 4707C4081F872B610069BA19 /* red-dot.png */; };
 		474B9A1F1F84CB6900F3B0DF /* TimeTablePopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474B9A1E1F84CB6800F3B0DF /* TimeTablePopUpViewController.swift */; };
 		474B9A221F84CD0C00F3B0DF /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474B9A211F84CD0C00F3B0DF /* CustomCell.swift */; };
 		477241BA1F84FEFB00A98B73 /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477241B91F84FEFB00A98B73 /* ScheduleTableViewCell.swift */; };
@@ -69,6 +70,7 @@
 		03CE8BD11EDA6AF60004A336 /* uncheckedBox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = uncheckedBox.png; sourceTree = "<group>"; };
 		03CE8BD61EDA6B6A0004A336 /* MeetingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingsTableViewCell.swift; sourceTree = "<group>"; };
 		247897F31F3FD91400EC6C4C /* addMeeting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addMeeting.swift; sourceTree = "<group>"; };
+		4707C4081F872B610069BA19 /* red-dot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "red-dot.png"; sourceTree = "<group>"; };
 		474B9A1E1F84CB6800F3B0DF /* TimeTablePopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTablePopUpViewController.swift; sourceTree = "<group>"; };
 		474B9A211F84CD0C00F3B0DF /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		477241B91F84FEFB00A98B73 /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewCell.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 		0349AF3D1ED16CE200CF3FC7 = {
 			isa = PBXGroup;
 			children = (
+				4707C4081F872B610069BA19 /* red-dot.png */,
 				03CE8BCF1EDA6AF60004A336 /* addButton.png */,
 				03CE8BD01EDA6AF60004A336 /* checkbox.png */,
 				03CE8BD11EDA6AF60004A336 /* uncheckedBox.png */,
@@ -274,6 +277,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4707C4091F872C4B0069BA19 /* red-dot.png in Resources */,
 				03CE8BD31EDA6AF60004A336 /* checkbox.png in Resources */,
 				0349AF591ED16CE200CF3FC7 /* LaunchScreen.storyboard in Resources */,
 				03CE8BD41EDA6AF60004A336 /* uncheckedBox.png in Resources */,

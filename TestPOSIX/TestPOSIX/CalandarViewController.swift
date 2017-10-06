@@ -10,7 +10,7 @@ import UIKit
 import JTAppleCalendar
 import Foundation
 
-//var plans = ["class1", "class2", "class3"]
+var dates = [String]();
 var plans : NSMutableArray = [];
 var sched : NSMutableArray = [];
 
@@ -58,17 +58,23 @@ class CalandarViewController: UIViewController, UITableViewDelegate, UITableView
         plans = NSMutableArray(array:Bridging.queryForAllMeetings());
         plans.addObjects(from: Bridging.queryForAllAssignments());
         plans.addObjects(from: Bridging.queryForAllTasks());
+//        for p in plans{
+//            let dateFormattt = DateFormatter()
+//            dateFormattt.dateStyle = .short
+//            let d = dateFormattt.date(from: (p as! AssignmentObjc).time)
+//            dates.append(dateFormattt.string(from: d!))
+//        }
         
         myTableView.reloadData()
         super.viewDidLoad()
         UITextField.appearance().tintColor = .black 
         //
         DispatchQueue.global().asyncAfter(deadline: .now()){
-            let serverObjects = self.getServerEvents()
-            for (date, event) in serverObjects {
-                let stringDate = self.formatter.string(from: date)
-                self.eventsFromTheServer[stringDate] = event
-            }
+//            let serverObjects = self.getServerEvents()
+//            for (date, event) in serverObjects {
+//                let stringDate = self.formatter.string(from: date)
+//               // self.eventsFromTheServer[stringDate] = event
+//            }
             DispatchQueue.main.async{
                 self.calendarView.reloadData()
             }
@@ -157,8 +163,11 @@ class CalandarViewController: UIViewController, UITableViewDelegate, UITableView
         guard let validCell = view as? CustomCell  else {
             return
         }
-        validCell.eventDotView.isHidden = !eventsFromTheServer.contains {
-            $0.key == formatter.string(from: cellState.date)}
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+       
+        validCell.eventDotView.isHidden = !dates.contains(dateFormatter.string(from: cellState.date))
+       
         
         
     }
@@ -194,13 +203,13 @@ class CalandarViewController: UIViewController, UITableViewDelegate, UITableView
         dateFormatter.dateStyle = .short
         let datetoday = dateFormatter.string(from: todaysDate)
         if validcell.isSelected{
-           
             dateSeleted = dateFormatter.string(from: cellState.date)
             //print(dateSeleted)
             for p in plans{
                 if (p as! AssignmentObjc).time.contains(dateSeleted){
                     sched.add(p)
                 }
+                
                 
             }
             if(datetoday == dateSeleted){
@@ -291,16 +300,21 @@ extension CalandarViewController : JTAppleCalendarViewDelegate {
 
 }
 /*simulates getting from a server, actually gets from array of added classes*/
-extension CalandarViewController{
-    func getServerEvents() ->[Date:String] {
-        formatter.dateFormat = "yyyy MM dd"
-        
-       // need to actually return events in data base
-        return [
-            formatter.date(from: "2017 09 29")!: "Test Event",
-            formatter.date(from: "2017 09 22")!: "Second Test Event",
-            formatter.date(from: "2017 10 14")!: "Third Test Event"
-    ]
-    }
-}
+//extension CalandarViewController{
+//    func getServerEvents() ->[Date] {
+//        formatter.dateFormat = "yyyy MM dd"
+//
+//       // need to actually return events in data base
+////        return {
+////        for p in plans{
+////        formatter.date(from (p as! AssignmentObjc).time)!:
+////        }
+////        }
+//
+////            formatter.date(from: "2017 09 29")!: "Test Event",
+////            formatter.date(from: "2017 09 22")!: "Second Test Event",
+////            formatter.date(from: "2017 10 14")!: "Third Test Event"
+////    ]
+//    }
+//}
 
